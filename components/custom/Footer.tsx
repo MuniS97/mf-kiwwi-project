@@ -11,6 +11,7 @@ import { Separator } from '../ui/separator';
 
 interface Props {
     className?: string;
+    translation: object
 }
 
 export const Footer: React.FC<Props> = ({ className }) => {
@@ -63,7 +64,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
                     </div>
                     <div className='flex justify-center items-start gap-2 text-white'>
                         <Phone width={24} height={24} className='text-cgold' />
-                        <a target='_blank' href='mailto:test@gmail.com' className='text-lg font-semibold'>test@gmail.com</a>
+                        <a target='_blank' href='mailto:firdavs435@icloud.com' className='text-lg font-semibold'>firdavs435@icloud.com</a>
                     </div>
                     <div className='flex justify-center items-start gap-2 text-white'>
                         <Link target='_blank' href={"/"}>

@@ -9,6 +9,7 @@ import { Menu } from 'lucide-react';
 
 interface Props {
     className?: string;
+    translation: object
 }
 
 export const NavBar: React.FC<Props> = ({ className }) => {
