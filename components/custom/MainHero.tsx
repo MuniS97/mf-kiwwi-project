@@ -20,7 +20,7 @@ export const MainHero: React.FC<Props> = ({ className }) => {
                             Learn More
                         </button>
                     </Link>
-                    <button className='group w-[70px] h-[70px] bg-cgold hover:bg-cgray transition duration-300 rounded-full flex justify-center items-center shadow shadow-cgold'>
+                    <button className='group w-[70px] h-[70px] bg-cgold hover:bg-cgray transition duration-300 rounded-full flex justify-center items-center shadow shadow-cgold hover:shadow-cgray'>
                         <Play width={24} height={24} className='text-cgray group-hover:text-cgold' />
                     </button>
                 </div>
