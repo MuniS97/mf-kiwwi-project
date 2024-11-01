@@ -2,6 +2,7 @@ import { MainAbout } from "@/components/custom/MainAbout";
 import { MainHero } from "@/components/custom/MainHero";
 import { MainOurProducts } from "@/components/custom/MainOurProducts";
 import { MainSubHero } from "@/components/custom/MainSubHero";
+import { Products } from "@/components/custom/Products";
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <MainSubHero />
       <MainAbout />
       <MainOurProducts />
+      <Products />
     </main>
   );
 }
