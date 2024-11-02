@@ -2,11 +2,34 @@ import React from 'react';
 import { Container } from '@/components/custom/Container';
 import { MainAbout } from '@/components/custom/MainAbout';
 import { MainSubHero } from '@/components/custom/MainSubHero';
+import { Separator } from '@/components/ui/separator';
+import { HandCoins, Handshake, Percent } from 'lucide-react';
+import { Statistics } from '@/components/custom/Statistics';
+import { SaleProduct } from '@/components/custom/SaleProduct';
+
+const perfumes = [
+    {
+        id: 4,
+        title: 'Perfume',
+        subtitle: "sale",
+        discount: 30,
+        image: '/images/perfumes/perfume4.webp',
+        button: 'Discover More'
+    },
+    {
+        id: 5,
+        title: 'Perfume',
+        subtitle: "sale",
+        discount: 15,
+        image: '/images/perfumes/perfume5.webp',
+        button: 'Discover More'
+    }
+]
 
 const Page = () => {
     return (
         <div className="bg-cdarkgray">
-            <div className="w-full h-full bg-[url('/images/testimonialsBg.webp')] bg-cover bg-center bg-no-repeat">
+            <section className="w-full h-full bg-[url('/images/testimonialsBg.webp')] bg-cover bg-center bg-no-repeat">
                 <div className='w-full h-full bg-csemigray'>
                     <Container className='flex justify-between items-center gap-8 py-20'>
                         <h2 className='text-[5em] font-bold text-white'>About Us</h2>
@@ -15,27 +38,49 @@ const Page = () => {
                         </div>
                     </Container>
                 </div>
-            </div>
+            </section>
             <MainSubHero className='py-20' />
-            <section className='w-full flex justify-between items-center flex-wrap gap-8 p-20'>
-                <div className='max-md:w-full flex flex-col justify-center items-center'>
-                    <span className='text-cgold text-[3em] font-bold'>13</span>
-                    <p className='text-lg text-clightgray'>Years of Experience</p>
+            <Statistics />
+            <MainAbout />
+            <section className='flex flex-col justify-center items-center gap-10 py-10 md:py-20'>
+                <div className='text-center flex flex-col justify-center items-center gap-5 px-4'>
+                    <h2 className='text-3xl md:text-[4em] lg:text-[5em] font-bold text-transparent leading-tight md:leading-[50px]' style={{ WebkitTextStroke: '1px #f2c437' }}>About</h2>
+                    <h3 className='text-white text-2xl md:text-[3em] leading-tight md:leading-[50px] font-semibold'>Perks & Benefits</h3>
                 </div>
-                <div className='max-md:w-full flex flex-col justify-center items-center'>
-                    <span className='text-cgold text-[3em] font-bold'>30+</span>
-                    <p className='text-lg text-clightgray'>Variety of Perfumes</p>
-                </div>
-                <div className='max-md:w-full flex flex-col justify-center items-center'>
-                    <span className='text-cgold text-[3em] font-bold'>100+</span>
-                    <p className='text-lg text-clightgray'>Happy Customers</p>
-                </div>
-                <div className='max-md:w-full flex flex-col justify-center items-center'>
-                    <span className='text-cgold text-[3em] font-bold'>50+</span>
-                    <p className='text-lg text-clightgray'>Reviews</p>
+
+                <div className='flex flex-col md:flex-row justify-between items-center gap-8 px-4'>
+                    <div className='text-center flex flex-col justify-center items-center gap-5 max-w-xs md:max-w-none'>
+                        <div className='p-5 border border-cgold rounded-se-[35%] rounded-es-[35%]'>
+                            <Handshake className='text-cgold' width={40} height={40} />
+                        </div>
+                        <h4 className='text-lg md:text-[1.5em] font-bold text-white'>Quick Payment</h4>
+                        <p className='max-w-[80%] text-base text-clightgray px-2 md:px-0'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, assumenda!</p>
+                    </div>
+
+                    <Separator orientation="vertical" className="w-full md:w-px md:h-full bg-clightgray/30 min-h-[1px] md:min-h-[200px] rotate-180 md:rotate-0 my-4 md:my-0" />
+
+                    <div className='text-center flex flex-col justify-center items-center gap-5 max-w-xs md:max-w-none'>
+                        <div className='p-5 border border-cgold rounded-[35%]'>
+                            <HandCoins className='text-cgold' width={40} height={40} />
+                        </div>
+                        <h4 className='text-lg md:text-[1.5em] font-bold text-white'>Affordable Prices</h4>
+                        <p className='max-w-[80%] text-base text-clightgray px-2 md:px-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, blanditiis!</p>
+                    </div>
+
+                    <Separator orientation="vertical" className="w-full md:w-px md:h-full bg-clightgray/30 min-h-[1px] md:min-h-[200px] rotate-180 md:rotate-0 my-4 md:my-0" />
+
+                    <div className='text-center flex flex-col justify-center items-center gap-5 max-w-xs md:max-w-none'>
+                        <div className='p-5 border border-cgold rounded-ss-[35%] rounded-ee-[35%]'>
+                            <Percent className='text-cgold' width={40} height={40} />
+                        </div>
+                        <h4 className='text-lg md:text-[1.5em] font-bold text-white'>Big Deals</h4>
+                        <p className='max-w-[80%] text-base text-clightgray px-2 md:px-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, atque!</p>
+                    </div>
                 </div>
             </section>
-            <MainAbout />
+            <Container className='w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 py-28'>
+                {perfumes.map(perfume => <SaleProduct key={perfume.id} translation={perfume} />)}
+            </Container>
         </div>
     );
 };
