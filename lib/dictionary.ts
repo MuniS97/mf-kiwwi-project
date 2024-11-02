@@ -1,7 +1,5 @@
 import "server-only";
 import type { Locale } from "@/i18n.config";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 const dictionaries = {
     ru: async () => await import("@/langs/ru.json").then((module) => module.default),
@@ -20,17 +18,3 @@ export const getDictionary = async (locale: Locale) => {
 
     return await dictionaryLoader();
 };
-
-
-export async function homeSellGuardian(key: string, lang: Locale): Promise<any> {
-    const res: any = (await cookies()).get("publicationData")?.value;
-
-    if (res !== undefined) {
-        const cookieStore = JSON.parse(decodeURIComponent(res));
-        if (!cookieStore[key]) {
-            redirect(`/${lang}/sell`);
-        }
-    } else {
-        redirect(`/${lang}/sell`);
-    }
-}
