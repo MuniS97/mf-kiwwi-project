@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import { Container } from './Container';
 
 const Counter = ({ targetValue, plus }: { targetValue: number, plus?: string }) => {
     const [count, setCount] = useState(0);
@@ -49,7 +50,7 @@ const Counter = ({ targetValue, plus }: { targetValue: number, plus?: string }) 
 
 export const Statistics = () => {
     return (
-        <section className='w-full flex justify-between items-center flex-wrap gap-8 p-20 pb-40'>
+        <Container className='w-full flex justify-between items-center flex-wrap gap-8 p-20 pb-40'>
             <div className='max-md:w-full flex flex-col justify-center items-center'>
                 <Counter targetValue={13} />
                 <p className='text-lg text-clightgray'>Years of Experience</p>
@@ -66,6 +67,6 @@ export const Statistics = () => {
                 <Counter targetValue={50} plus='+' />
                 <p className='text-lg text-clightgray'>Reviews</p>
             </div>
-        </section>
+        </Container>
     );
 };
