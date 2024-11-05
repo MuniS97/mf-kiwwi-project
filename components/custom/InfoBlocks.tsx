@@ -1,5 +1,6 @@
 import React from 'react';
 import { Separator } from '../ui/separator';
+import { Container } from './Container';
 
 interface Props {
     block: {
@@ -13,7 +14,7 @@ interface Props {
 
 export const InfoBlocks: React.FC<Props> = ({ block, title, subtitle }) => {
     return (
-        <section className='flex flex-col justify-center items-center gap-20 py-10 md:py-20'>
+        <Container className='flex flex-col justify-center items-center gap-20 py-10 md:py-20'>
             <div className='text-center flex flex-col justify-center items-center gap-5 px-4'>
                 <h2 className='text-3xl md:text-[4em] lg:text-[5em] font-bold text-transparent leading-tight md:leading-[50px]' style={{ WebkitTextStroke: '1px #f2c437' }}>{title}</h2>
                 <h3 className='text-white text-2xl md:text-[3em] leading-tight md:leading-[50px] font-semibold'>{subtitle}</h3>
@@ -48,6 +49,6 @@ export const InfoBlocks: React.FC<Props> = ({ block, title, subtitle }) => {
                     <p className='max-w-[80%] text-base text-clightgray px-2 md:px-0'>{block[2].description}</p>
                 </div>
             </div>
-        </section>
+        </Container>
     );
 };
