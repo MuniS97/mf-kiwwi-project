@@ -3,12 +3,15 @@ import { cn } from '@/lib/utils';
 import { Container } from './Container';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import { Locale } from '@/i18n.config';
+import Link from 'next/link';
 
 interface Props {
     className?: string;
+    lang?: Locale
 }
 
-export const MainOurProducts: React.FC<Props> = ({ className }) => {
+export const MainOurProducts: React.FC<Props> = ({ className, lang }) => {
     return (
         <Container className={cn("flex flex-col justify-center items-center gap-5 py-36", className)}>
             <h2 className='text-[4em] lg:text-[5em] font-bold text-transparent leading-[50px]' style={{ WebkitTextStroke: '1px #f2c437' }}>Perfume</h2>
@@ -30,9 +33,11 @@ export const MainOurProducts: React.FC<Props> = ({ className }) => {
                         ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                         aliquip ex ea.
                     </p>
-                    <Button variant={"outline"} className='shadow shadow-white bg-transparent text-white rounded-full py-7 px-10 hover:bg-cgold hover:text-black hover:border-cgold hover:shadow-cgold transition duration-300'>
-                        Learn More
-                    </Button>
+                    <Link href={`/${lang}/collection`}>
+                        <Button variant={"outline"} className='shadow shadow-white bg-transparent text-white rounded-full py-7 px-10 hover:bg-cgold hover:text-black hover:border-cgold hover:shadow-cgold transition duration-300'>
+                            Learn More
+                        </Button>
+                    </Link>
                 </div>
 
                 <div className="w-full md:w-1/3 relative bg-cover bg-center rounded-ee-[100px] overflow-hidden h-[300px] md:h-full">

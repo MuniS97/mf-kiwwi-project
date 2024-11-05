@@ -2,12 +2,15 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
 import { Container } from './Container';
+import { Locale } from '@/i18n.config';
+import Link from 'next/link';
 
 interface Props {
     className?: string;
+    lang?: Locale
 }
 
-export const MainAbout: React.FC<Props> = ({ className }) => {
+export const MainAbout: React.FC<Props> = ({ className, lang }) => {
     return (
         <div className={cn("w-full h-full bg-[url('/images/mainAboutBg.webp')] bg-cover bg-no-repeat bg-center", className)}>
             <div className='py-20 px-10 flex justify-end items-end pr-[5%] bg-cgray/70'>
@@ -16,7 +19,9 @@ export const MainAbout: React.FC<Props> = ({ className }) => {
                         <h2 className='text-[4em] lg:text-[5em] font-bold text-transparent leading-[50px]' style={{ WebkitTextStroke: '1px #f2c437' }}>About</h2>
                         <h3 className='text-white text-[3em] leading-[50px] font-semibold'>The New Fresh <br /> Sensation</h3>
                         <p className='text-clightgray text-base font-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, quo? Quam optio reprehenderit ducimus non? Illo, quos odio! Eius veritatis perspiciatis assumenda perferendis nihil exercitationem alias quas quasi dolor dolorum!</p>
-                        <Button variant={"outline"} className='shadow shadow-white bg-transparent text-white rounded-full py-7 px-10 hover:bg-cgold hover:text-black hover:border-cgold hover:shadow-cgold transition duration-300'>Learn More</Button>
+                        <Link href={`/${lang}/about`}>
+                            <Button variant={"outline"} className='shadow shadow-white bg-transparent text-white rounded-full py-7 px-10 hover:bg-cgold hover:text-black hover:border-cgold hover:shadow-cgold transition duration-300'>Learn More</Button>
+                        </Link>
                     </div>
                 </Container>
             </div>

@@ -5,33 +5,17 @@ import { Product } from './Product';
 
 interface Props {
     className?: string;
+    perfumes: {
+        id: number;
+        title: string;
+        description: string;
+        image: string;
+        button: string;
+    }[]
 }
 
-const perfumes = [
-    {
-        id: 1,
-        title: 'Cool Winters',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, odit?',
-        image: '/images/perfumes/perfume1.webp',
-        button: 'Discover More'
-    },
-    {
-        id: 2,
-        title: 'Eu De Rose',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, praesentium?',
-        image: '/images/perfumes/perfume2.webp',
-        button: 'Discover More'
-    },
-    {
-        id: 3,
-        title: 'Warm Sakura',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, debitis.',
-        image: '/images/perfumes/perfume3.webp',
-        button: 'Discover More'
-    },
-];
 
-export const Products: React.FC<Props> = ({ className }) => {
+export const Products: React.FC<Props> = ({ className, perfumes }) => {
     return (
         <Container className={cn("w-ful h-hull pb-20", className)}>
             <h2 className='text-[4em] lg:text-[5em] font-bold text-transparent leading-[50px]' style={{ WebkitTextStroke: '1px #f2c437' }}>Perfume</h2>

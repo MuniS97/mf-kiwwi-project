@@ -8,13 +8,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Instagram, MapPin, MousePointer2, Phone, Youtube } from 'lucide-react';
 import { Separator } from '../ui/separator';
+import { Locale } from '@/i18n.config';
 
 interface Props {
     className?: string;
     translation: object
+    lang: Locale
 }
 
-export const Footer: React.FC<Props> = ({ className }) => {
+export const Footer: React.FC<Props> = ({ className, lang }) => {
     const pathname = usePathname();
 
     return (
@@ -28,22 +30,22 @@ export const Footer: React.FC<Props> = ({ className }) => {
                     <div className='flex flex-col justify-center items-start gap-5'>
                         <h3 className='text-white font-semibold'>Navigation</h3>
                         <ul className="flex flex-col justify-center items-start gap-2">
-                            <Link href={"/"}>
+                            <Link href={`/${lang}`}>
                                 <li className={cn('transition duration-300 font-medium text-base', pathname === '/' ? 'text-clightgray' : 'text-cgold')}>
                                     Home
                                 </li>
                             </Link>
-                            <Link href={"/about"}>
+                            <Link href={`/${lang}/about`}>
                                 <li className={cn('transition duration-300 font-medium text-base', pathname === '/about' ? 'text-clightgray' : 'text-cgold')}>
                                     About Us
                                 </li>
                             </Link>
-                            <Link href={"/collection"}>
+                            <Link href={`/${lang}/collection`}>
                                 <li className={cn('transition duration-300 font-medium text-base', pathname === '/collection' ? 'text-clightgray' : 'text-cgold')}>
                                     Collection
                                 </li>
                             </Link>
-                            <Link href={"/contact"}>
+                            <Link href={`/${lang}/contact`}>
                                 <li className={cn('transition duration-300 font-medium text-base', pathname === '/contact' ? 'text-clightgray' : 'text-cgold')}>
                                     Contact Us
                                 </li>

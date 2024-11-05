@@ -5,6 +5,7 @@ import { Header } from "@/components/custom/Header";
 import { Footer } from "@/components/custom/Footer";
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/i18n.config";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -32,15 +33,16 @@ export default async function RootLayout({
     const { header, footer } = await getDictionary(lang);
 
     return (
-        <html lang="en">
+        <html lang="ru">
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <Header translation={header} />
+                <Header translation={header} lang={lang} />
                 <main>
                     {children}
                 </main>
-                <Footer translation={footer} />
+                <Footer translation={footer} lang={lang} />
+                <Toaster />
             </body>
         </html>
     );
