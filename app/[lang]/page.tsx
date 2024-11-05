@@ -30,7 +30,10 @@ const perfumes = [
   },
 ];
 
-export default function Home({ params: { lang } }: { params: { lang: Locale } }) {
+type PageParams = Promise<{ lang: Locale }>;
+
+const Home = async ({ params }: { params: PageParams }) => {
+  const { lang } = await params;
 
   return (
     <main className="bg-cdarkgray">
@@ -43,3 +46,4 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
     </main>
   );
 }
+export default Home

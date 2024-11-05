@@ -1,11 +1,6 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
 import { PagesHero } from '@/components/custom/PagesHero';
 import { Products } from '@/components/custom/Products';
-
-interface Props {
-    className?: string;
-}
 
 const perfumes = [
     {
@@ -73,9 +68,9 @@ const perfumes = [
     },
 ];
 
-const Page: React.FC<Props> = ({ className }) => {
+const Page = () => {
     return (
-        <div className={cn("bg-cdarkgray text-white", className)}>
+        <div className="bg-cdarkgray text-white">
             <PagesHero title='Collection' />
             <Products className='py-20' perfumes={perfumes} />
         </div>
@@ -83,4 +78,4 @@ const Page: React.FC<Props> = ({ className }) => {
 };
 
 
-export default Page
+export default Page;

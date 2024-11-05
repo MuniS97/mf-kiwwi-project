@@ -34,7 +34,11 @@ const infoBlocks = [
     { icon: <Percent width={40} height={40} />, title: 'Discounts', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, odit?' },
 ]
 
-const Page = ({ params: { lang } }: { params: { lang: Locale } }) => {
+type PageParams = Promise<{ lang: Locale }>;
+
+const Page = async ({ params }: { params: PageParams }) => {
+    const { lang } = await params;
+    
     return (
         <div className="bg-cdarkgray">
             <PagesHero title='About Us' description='At mf_kiwwi, we are more than just an online perfume shop in Tashkent— we’re a partner in your journey to discover the scent that feels uniquely yours. We understand that fragrance is deeply personal, with the power to evoke memories, enhance confidence, and reflect your true self. That’s why we’re dedicated to offering a carefully selected range of high-quality perfumes that speak to every style and personality. Our team is passionate about guiding you through the process, helping you find that perfect fragrance that makes you feel complete. When you shop with mf_kiwwi, you’re not just buying a product; you’re joining a community that values authenticity, quality, and a personalized experience. Let us help you express your individuality through the art of scent—experience the difference with mf_kiwwi.' />

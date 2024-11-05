@@ -23,7 +23,7 @@
         "i18next": "^23.10.1",
         "lucide-react": "^0.454.0",
         "negotiator": "^1.0.0",
-        "next": "15.0.2",
+        "next": "^15.0.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-hook-form": "^7.53.1",
