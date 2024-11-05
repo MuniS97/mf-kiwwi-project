@@ -16,7 +16,7 @@ const ChangeLanguage = () => {
                     className={cn(
                         "max-lg:px-3 max-lg:py-1.5 max-lg:border-2 max-lg:border-secondary max-lg:rounded-full",
                         pathName.slice(1, 3) === "en"
-                            ? "max-lg:bg-secondary max-lg:text-white text-secondary"
+                            ? "max-lg:bg-secondary max-lg:text-black text-secondary"
                             : "bg-transparent text-[#808080] max-lg:text-secondary"
                     )}
                 >
@@ -28,7 +28,7 @@ const ChangeLanguage = () => {
                     className={cn(
                         "max-lg:px-3 max-lg:py-1.5 max-lg:border-2 max-lg:border-secondary max-lg:rounded-full",
                         pathName.slice(1, 3) === "ru"
-                            ? "max-lg:bg-secondary max-lg:text-white text-secondary"
+                            ? "max-lg:bg-secondary max-lg:text-black text-secondary"
                             : "bg-transparent text-[#808080] max-lg:text-secondary"
                     )}
                 >
@@ -40,7 +40,7 @@ const ChangeLanguage = () => {
                     className={cn(
                         "max-lg:px-3 max-lg:py-1.5 max-lg:border-2 max-lg:border-secondary max-lg:rounded-full",
                         pathName.slice(1, 3) === "uz"
-                            ? "max-lg:bg-secondary max-lg:text-white text-secondary"
+                            ? "max-lg:bg-secondary max-lg:text-black text-secondary"
                             : "bg-transparent text-[#808080] max-lg:text-secondary"
                     )}
                 >
