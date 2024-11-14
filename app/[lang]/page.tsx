@@ -36,14 +36,14 @@ const Home = async ({ params }: { params: PageParams }) => {
   const { lang } = await params;
 
   return (
-    <main className="bg-cdarkgray">
+    <main className="bg-cdarkgray" >
       <MainHero lang={lang} />
       <MainSubHero lang={lang} />
       <MainAbout lang={lang} />
       <MainOurProducts lang={lang} />
       <Products perfumes={perfumes} />
       <MainTestimonials />
-    </main>
+    </main >
   );
 }
 export default Home
