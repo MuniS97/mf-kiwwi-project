@@ -6,7 +6,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET() {
     await connect()
     try {
-
         const perfumes = await Perfume.find({})
 
         return NextResponse.json({ message: "ok", data: perfumes }, { status: 200 })
@@ -19,13 +18,28 @@ export async function GET() {
 export async function POST(req: NextRequest) {
     await connect()
     try {
-        console.log(req);
-
         const data = await req.json()
+
         const perfume = await Perfume.create(data)
 
-        return NextResponse.json({ message: "ok", data: perfume }, { status: 201 })
+        return NextResponse.json({ message: "perfume added", data: perfume }, { status: 201 })
     } catch (error) {
         return NextResponse.json({ message: error }, { status: 500 })
+    }
+}
+
+
+export async function DELETE(req: NextRequest) {
+
+    const searchParams = req.nextUrl.searchParams;
+    const id = searchParams.get('id');
+
+    try {
+        const data = await Perfume.findByIdAndDelete(id)
+
+        return NextResponse.json({ message: "perfume deleted", data }, { status: 201 });
+
+    } catch (e) {
+        return NextResponse.json({ message: e }, { status: 500 });
     }
 }
