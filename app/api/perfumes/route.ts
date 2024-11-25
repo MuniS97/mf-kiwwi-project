@@ -29,7 +29,33 @@ export async function POST(req: NextRequest) {
 }
 
 
+export async function PATCH(req: NextRequest) {
+    await connect();
+
+    const searchParams = req.nextUrl.searchParams;
+    const id = searchParams.get('id');
+
+    try {
+        const data = await req.json();
+
+        const updatedPerfume = await Perfume.findByIdAndUpdate(id, data, {
+            new: true,
+        });
+
+        if (!updatedPerfume) {
+            return NextResponse.json({ message: "perfume not found" }, { status: 404 });
+        }
+
+        return NextResponse.json({ message: "perfume updated", data: updatedPerfume }, { status: 200 });
+    } catch (error) {
+        return NextResponse.json({ message: error }, { status: 500 });
+    }
+}
+
+
+
 export async function DELETE(req: NextRequest) {
+    await connect()
 
     const searchParams = req.nextUrl.searchParams;
     const id = searchParams.get('id');
